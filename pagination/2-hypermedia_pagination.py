@@ -25,7 +25,7 @@ class Server:
 
     def dataset(self) -> List[List]:
         """Cached dataset of baby names.
-        
+
         Loads the dataset from the CSV file if it has not been loaded yet.
         """
         if self.__dataset is None:
