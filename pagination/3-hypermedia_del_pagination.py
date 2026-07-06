@@ -14,6 +14,7 @@ class Server:
         self.__indexed_dataset = None
 
     def dataset(self) -> List[List]:
+        """Load and return the dataset from the CSV file."""
         if self.__dataset is None:
             with open(self.DATA_FILE) as f:
                 reader = csv.reader(f)
