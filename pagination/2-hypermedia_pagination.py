@@ -24,6 +24,10 @@ class Server:
         self.__dataset = None
 
     def dataset(self) -> List[List]:
+        """Cached dataset of baby names.
+        
+        Loads the dataset from the CSV file if it has not been loaded yet.
+        """
         if self.__dataset is None:
             with open(self.DATA_FILE) as f:
                 reader = csv.reader(f)
@@ -32,6 +36,7 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """Return the requested page of the dataset."""
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
         start, end = index_range(page, page_size)
